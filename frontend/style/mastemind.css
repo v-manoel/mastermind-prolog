@@ -1,0 +1,100 @@
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    max-height: 672px;
+    overflow-y: auto;
+    gap: 1rem;
+}
+
+.container.board {
+    background: #F1EDED;
+    border: 1px solid #EAE3E3;
+}
+
+.prompt { 
+    background: #F1EDED;
+    border: 1px solid #EAE3E3;
+}
+
+.prompt .btn {
+    height: 54%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #368b3d;
+    color: #ffffff;
+    border: 1px solid #0000003f;
+    border-radius: 10px;
+    font-size: 1.8rem;
+}
+
+.board .card {
+    background: #FFFFFF;
+    border: 1px solid #00000079;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-height: 96px;
+    max-width: 472px;
+}
+
+.code {
+    width: 78%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.feedback {
+    width: 22%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: space-around;
+    border-left: 1px solid #00000079;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.circle {
+    min-width: 1rem;
+    min-height: 1rem;
+    border-radius: 100%;
+    background: #D9D9D9;
+    border: 1px solid #00000079;
+}
+
+.circle.circle-code {
+    width: 50px;
+    height: 50px;
+}
+
+.circle.circle-feedback {
+    width: 30px;
+    height: 30px;
+
+}
+
+.board .card.error {
+    border-color: red;
+}
+
+.board .card.selected {
+    border-color: green;
+}
+
+.board .card.disabled {
+    border-color: #EAE3E3;
+}
