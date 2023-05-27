@@ -5,20 +5,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px;
-    max-height: 672px;
+    padding: 12px 8px;
+    max-height: 682px;
     overflow-y: auto;
     gap: 1rem;
-}
-
-.container.board {
-    background: #F1EDED;
     border: 1px solid #EAE3E3;
-}
-
-.prompt { 
-    background: #F1EDED;
-    border: 1px solid #EAE3E3;
+    background: #2c2c2c;
+    border-radius: 6px;
 }
 
 .prompt .btn {
@@ -35,8 +28,9 @@
 }
 
 .board .card {
-    background: #FFFFFF;
-    border: 1px solid #00000079;
+    border-radius: 10px;
+    /* background: #F1EDED; */
+    border: 2px solid #00000048;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -72,13 +66,18 @@
     min-width: 1rem;
     min-height: 1rem;
     border-radius: 100%;
-    background: #D9D9D9;
     border: 1px solid #00000079;
+    background: #d8d8d857;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .circle.circle-code {
     width: 50px;
     height: 50px;
+}
+
+#secret-code .circle.circle-code:hover {
+    cursor: pointer;
 }
 
 .circle.circle-feedback {
@@ -88,13 +87,17 @@
 }
 
 .board .card.error {
-    border-color: red;
+    border-color: rgba(201, 14, 14, 0.61);
 }
 
 .board .card.selected {
-    border-color: green;
+    border-color: rgba(22, 90, 14, 0.867);
 }
 
 .board .card.disabled {
     border-color: #EAE3E3;
+}
+
+.prompt .btn {
+    cursor: pointer;
 }

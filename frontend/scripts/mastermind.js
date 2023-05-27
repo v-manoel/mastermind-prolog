@@ -1,10 +1,10 @@
 const colors = {
-    1: 'red',
-    2: 'blue',
-    3: 'green',
-    4: 'purple',
-    5: 'pink',
-    6: 'yellow'
+    1: '#007bff',
+    2: '#00cc00',
+    3: '#ff4500',
+    4: '#8a2be2',
+    5: '#ffcc00',
+    6: '#ff6600'
 };
 const reversedColors = Object.fromEntries(Object.entries(colors).map(a => a.reverse()))
 const colorsLength = Object.keys(colors).length
@@ -15,7 +15,7 @@ function changeSecretColors(){
     colorsFields.forEach(field => {
         field.addEventListener('click', () =>{
             if(!field.classList.contains('hidden')){
-                color = colors[1]
+                let color = colors[1]
                 
                 if(field.hasAttribute('color')){
                     currentcolor = field.getAttribute('color');
@@ -47,6 +47,9 @@ function btnStateHadle() {
 }
 
 function turnGame() {
+    const feedbackSpace = document.querySelector(".board .card.selected:last-child .feedback");
+    feedbackSpace.classList.remove('selected');
+    feedbackSpace.classList.add('disabled')
 
 }
 
@@ -72,5 +75,29 @@ function startGame() {
     }
 }
 
+function handleFeedback(){
+    const feedbackSpace = document.querySelector(".board .card.selected:last-child .feedback");
+    const feedbackFields = feedbackSpace.querySelectorAll(".circle-feedback")
+    const feedbackColors = ['white','black','#d8d8d857'];
+    
+    feedbackFields.forEach(field => {
+        field.addEventListener('click', () => {
+            if(!feedbackSpace.classList.contains('disabled')){
+                let colorId = 0;
+                
+                if(field.hasAttribute('colorId')){
+                    let currentColorId = field.getAttribute('colorId');
+                    colorId = ((currentColorId+1)%feedbackColors.length)
+                }
+                
+                field.setAttribute('colorId',colorId);
+                field.style.backgroundColor = feedbackColors[colorId];
+            }
+        });
+    });
+
+}
+
 changeSecretColors();
-btnStateHadle() ;
+btnStateHadle();
+handleFeedback();
