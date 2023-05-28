@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,14 @@
     <title>mastermid</title>
     <link rel="stylesheet" href="../style/main.css" />
     <link rel="stylesheet" href="../style/mastemind.css" />
+    <link rel="stylesheet" href="../style/modal.css" />
 </head>
+
 <body>
     <main>
         <section class="game-table">
             <section class="container board">
-                    
+
             </section>
             <div class="container prompt">
                 <div class="card disabled selected error">
@@ -35,7 +38,7 @@
             <div class="table">
                 <div class="row guess-count">
                     <div class="column label">Tentativas:</div>
-                    <div class="column content"><span id="n-guesses">0</span> tentativas</div>    
+                    <div class="column content"><span id="n-guesses">0</span> tentativas</div>
                 </div>
                 <div class="row secret-id">
                     <div class="column label">Código Secreto:</div>
@@ -43,18 +46,18 @@
                 </div>
                 <div class="row last-guess-id">
                     <div class="column label">Último Chute:</div>
-                    <div class="column content">----</div>    
+                    <div class="column content">----</div>
                 </div>
                 <div class="row feedback-id">
                     <div class="column label">Feedback Fornecido:</div>
                     <div class="column content">
                         <p><span id="correct-positions">-</span> Corretos</p>
                         <p><span id="incorrect-positions">-</span> Incorretos</p>
-                    </div>  
+                    </div>
                 </div>
                 <div class="row guess-id">
                     <div class="column label">Novo Chute:</div>
-                    <div class="column content">----</div>    
+                    <div class="column content">----</div>
                 </div>
                 <div class="row status">
                     <div class="column label">Status:</div>
@@ -63,12 +66,26 @@
             </div>
         </section>
     </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Game Over</h2>
+            </div>
+            <div class="modal-body">
+                <p class="end-message">...</p>
+                <button id="reloadBtn">Novo Jogo</button>
+            </div>
+        </div>
+    </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="../scripts/global.js"></script>
+    <script type="module" src="../scripts/modal.js"></script>
     <script type="module" src="../scripts/boardHandle.js"></script>
     <script type="module" src="../scripts/prompt.js"></script>
     <script type="module" src="../scripts/feedback.js"></script>
     <script type="module" src="../scripts/statsTable.js"></script>
     <script type="module" src="../scripts/game.js"></script>
 </body>
+
 </html>

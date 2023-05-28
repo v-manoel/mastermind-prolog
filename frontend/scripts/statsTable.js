@@ -2,8 +2,8 @@ import { mastermindApiUrl} from './global.js';
 
 const statsTable = document.querySelector('.game-stats .table')
 
-async function updateWithGameStatus(){
-    const {status, feedback, secretCode, guess, turnStates} = await getGameStatus();
+async function updateWithGameStatus(gameStatus){
+    const {status, feedback, secretCode, guess, turnStates} = gameStatus;
 
     const guessCount = statsTable.querySelector('.guess-count .content #n-guesses');
     guessCount.textContent = turnStates.length +1
@@ -24,11 +24,6 @@ async function updateWithGameStatus(){
     
     const statusComponent = statsTable.querySelector('.status .content');
     statusComponent.textContent = status['message'];
-}
-
-async function getGameStatus(){
-    const response = await axios.get(`${mastermindApiUrl}status`);
-    return response.data;
 }
 
 

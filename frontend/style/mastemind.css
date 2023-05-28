@@ -36,7 +36,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.container.board{
+.container.board {
     height: 730px;
     overflow-y: scroll;
 }
@@ -158,12 +158,12 @@
     font-size: 1.1rem;
 }
 
-.game-stats .table .content{
+.game-stats .table .content {
     text-align: end;
     font-weight: bold;
 }
 
-.game-stats .table .row:last-child{
+.game-stats .table .row:last-child {
     max-width: 400px;
     margin-top: 60px;
     border-bottom: none;
