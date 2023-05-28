@@ -10,120 +10,65 @@
 </head>
 <body>
     <main>
-        <section class="container board">
-            <div class="card game-turn disabled">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn error">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn selected">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn selected">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn selected">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn selected">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                </div>
-            </div>
-            <div class="card game-turn selected">
-                <div class="code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                </div>
-                <div class="feedback">
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
-                    <div class="circle circle-feedback"></div>
+        <section class="game-table">
+            <section class="container board">
+                    
+            </section>
+            <div class="container prompt">
+                <div class="card disabled selected error">
+                    <div class="code" id="secret-code">
+                        <div class="circle circle-code"></div>
+                        <div class="circle circle-code"></div>
+                        <div class="circle circle-code"></div>
+                        <div class="circle circle-code"></div>
+                    </div>
+                    <div class="btn">
+                        Start
+                    </div>
                 </div>
             </div>
         </section>
-        <div class="container prompt">
-            <div class="card disabled selected error">
-                <div class="code" id="secret-code">
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
-                    <div class="circle circle-code"></div>
+        <section class="game-stats">
+            <h2>
+                Estátisticas do Jogo
+            </h2>
+            <div class="table">
+                <div class="row guess-count">
+                    <div class="column label">Tentativas:</div>
+                    <div class="column content"><span id="n-guesses">0</span> tentativas</div>    
                 </div>
-                <div class="btn">
-                    Start
+                <div class="row secret-id">
+                    <div class="column label">Código Secreto:</div>
+                    <div class="column content">----</div>
+                </div>
+                <div class="row last-guess-id">
+                    <div class="column label">Último Chute:</div>
+                    <div class="column content">----</div>    
+                </div>
+                <div class="row feedback-id">
+                    <div class="column label">Feedback Fornecido:</div>
+                    <div class="column content">
+                        <p><span id="correct-positions">-</span> Corretos</p>
+                        <p><span id="incorrect-positions">-</span> Incorretos</p>
+                    </div>  
+                </div>
+                <div class="row guess-id">
+                    <div class="column label">Novo Chute:</div>
+                    <div class="column content">----</div>    
+                </div>
+                <div class="row status">
+                    <div class="column label">Status:</div>
+                    <div class="column content">-----</div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
-    <script src="../scripts/mastermind.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../scripts/global.js"></script>
+    <script type="module" src="../scripts/boardHandle.js"></script>
+    <script type="module" src="../scripts/prompt.js"></script>
+    <script type="module" src="../scripts/feedback.js"></script>
+    <script type="module" src="../scripts/statsTable.js"></script>
+    <script type="module" src="../scripts/game.js"></script>
 </body>
 </html>
