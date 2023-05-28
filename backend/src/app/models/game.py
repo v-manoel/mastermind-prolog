@@ -16,19 +16,24 @@ class Game:
 
         self.has_game_ended = False
         self.result_codes: dict = {
-            'lose': {'code': 0, 'message': 'Game over: Agent Loss'},
-            'win': {'code': 1, 'message': 'Congratulations: Agent Win'},
-            'continue': {'code': 2, 'message': 'Continue'},
-            'invalid': {'code': -1, 'message': 'Game over: Invalid Feedback Sequence - Has no more possible solutions'}
+            'lose': {'code': 0, 'message': 'Sinto Muito! Excedeu o número de tentativas !'},
+            'win': {'code': 1, 'message': 'Parabéns! O agente venceu o jogo'},
+            'continue': {'code': 2, 'message': 'Continue ...'},
+            'invalid': {'code': -1, 'message': 'Sinto Muito: Sequência de Feedback Inválida'}
         }
 
-    def start(self, secret_code: list = [int]) -> bool:
+    def start(self, secret_code = None) -> bool:
         try:
-            formated_code: str = ','.join([str(item) for item in secret_code])
-            formated_code = f'[{formated_code}]'
-            self.prolog.ask('run',[formated_code])
+            if(secret_code):
+                formated_code: str = ','.join([str(item) for item in secret_code])
+                formated_code = f'[{formated_code}]'
+                self.prolog.ask('run',[formated_code])
+            else:
+                self.prolog.ask('run')
         except:
             return False
+        
+        self.has_game_ended = False
         return True
 
     def feedback_turn(self, feedback: list) -> list:
@@ -57,6 +62,15 @@ class Game:
         current_guess: list = []
         try:
            current_guess = self.prolog.assign('current_guess_code') # type: ignore
+        except:
+            return current_guess
+    
+        return current_guess
+    
+    def get_last_feedback(self) -> list:
+        current_guess: list = []
+        try:
+           current_guess = self.prolog.assign('feedback') # type: ignore
         except:
             return current_guess
     

@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from app.models.game import Game
 
 
 app = Flask(__name__)
+CORS(app)
 game = Game()
 
 @app.route('/start', methods=['POST'])
@@ -24,9 +26,12 @@ def game_turn():
     game.feedback_turn(feedback)
 
     game_status = game.status()
+    
     response = {
-        'status': game_status[0],
-        'message': game_status[1],
+        'status': {
+            'code': game_status[0],   
+            'message': game_status[1],
+        },
         'guess': game.get_current_guess()
     }
 
@@ -37,8 +42,14 @@ def game_status():
 
     game_status = game.status()
     response = {
-        'status': game_status[0],
-        'message': game_status[1],
+        'status': {
+            'code': game_status[0],   
+            'message': game_status[1],
+        },
+        'feedback': game.get_last_feedback(),
+        'secretCode': game.get_secret_code(),
+        'guess': game.get_current_guess(),
+        'turnStates': game.get_turn_states(),
     }
 
     return jsonify(response), 200
