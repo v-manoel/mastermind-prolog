@@ -48,7 +48,7 @@ Na visualização do usuário as cores, que é conhecido apenas pelos seus códi
 A representação do feedback é feita da mesma forma, enquanto no backend da aplicação o feedback é um objeto com dois componentes (o primeiro representando a quantidade de cores nas posições corretas no código especulado e a segunda a quantidade de cores na posição incorreta), na página web é realizado o seguinte mapeamento.
 
 <div align="center">
-  <img alt="Feedback Mapping" src="https://github.com/v-manoel/mastermind-prolog/assets/62719753/7c2187de-224b-42cd-8dff-c3b186948211" width="30%" style="border: 1px solid black">
+  <img alt="Feedback Mapping" src="https://github.com/v-manoel/mastermind-prolog/assets/62719753/75bcbf18-d706-4814-a624-9cac28111f71" width="30%" style="border: 1px solid black">
 </div>
 
 - Verde: Significa que o chute fornecido possui uma cor e na posição correta.
