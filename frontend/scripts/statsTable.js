@@ -1,5 +1,3 @@
-import { mastermindApiUrl} from './global.js';
-
 const statsTable = document.querySelector('.game-stats .table')
 
 async function updateWithGameStatus(gameStatus){
