@@ -35,6 +35,25 @@ A API possui os seguintes endpoints:
 ### Frontend
 
 O frontend foi desenvolvido utilizando JavaScript, CSS e HTML puro. Ele consiste em uma única visualização que permite que o usuário interaja com o jogo.
+<div align="center">
+  <img alt="Game Board" src="https://github.com/v-manoel/mastermind-prolog/assets/62719753/1343bfb8-ccfe-46ea-8f70-632709934f6c" width="60%" style="border: 1px solid black">
+</div>
+
+Na visualização do usuário as cores, que é conhecido apenas pelos seus códigos no backend, são apresentadas de acordo com o seguinte mapping (color: id):
+
+<div align="center">
+  <img alt="Color Mapping" src="https://github.com/v-manoel/mastermind-prolog/assets/62719753/12f99276-6268-4525-9cab-69ed6b47706f" width="50%" style="border: 1px solid black">
+</div>
+
+A representação do feedback é feita da mesma forma, enquanto no backend da aplicação o feedback é um objeto com dois componentes (o primeiro representando a quantidade de cores nas posições corretas no código especulado e a segunda a quantidade de cores na posição incorreta), na página web é realizado o seguinte mapeamento.
+
+<div align="center">
+  <img alt="Feedback Mapping" src="https://github.com/v-manoel/mastermind-prolog/assets/62719753/7c2187de-224b-42cd-8dff-c3b186948211" width="30%" style="border: 1px solid black">
+</div>
+
+- Verde: Significa que o chute fornecido possui uma cor e na posição correta.
+- Vermelho: Significa que o chute fornecido possui uma cor certa na posição errada.
+- Cinza: Significa que o chute fornecido não possui cor correta, nem posição correta.
 
 ---
 
