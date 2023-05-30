@@ -6,14 +6,8 @@ O projeto consiste em um resolvedor para o jogo Masterming. O resolvedor tentar�
 
 ---
 
-## Pré requisitos
-
-Executar o arquivo de instalação das dependências utilizadas no projeto
-Na linha de comando execute:
-
-- python requirements.py
-
----
+## O Solucionador:
+O solucionador do prolog é baseado no algoritmo proposto por [Donald Knuth](https://stackoverflow.com/questions/62430071/donald-knuth-algorithm-mastermind). Nesta abordagem o agente utiliza o histório de chutes realizados e feedbacks recebidos para estes chutes para delimitar o número de novos possíveis chutes.
 
 ## Arquitetura da Solução:
 
@@ -67,4 +61,15 @@ O projeto divide seu conteúdo em diferentes branchs estruturadas como:
 
 ---
 
+## Pré requisitos:
+
+Executar o arquivo de instalação das dependências utilizadas no projeto
+Na linha de comando execute:
+
+- python requirements.py
+
+---
+
 ## Como Executar?
+Após instalar as dependências definidas em `requeriments.txt`, siga para o diretório **backend/src** e execute o arquivo **app.py**, utilize o comando `python3 app.py`.
+Depois utilizando um servidor web abra a página `mastermind.html` e é só jogar !!!
