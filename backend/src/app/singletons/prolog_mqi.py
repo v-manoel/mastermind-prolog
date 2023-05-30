@@ -1,4 +1,4 @@
-from ..decorators.singleton import singleton
+from decorators.singleton import singleton
 import threading
 from swiplserver import PrologMQI
 from typing import List

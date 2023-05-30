@@ -1,4 +1,4 @@
-from ..singletons.prolog_mqi import PrologServer
+from singletons.prolog_mqi import PrologServer
 from typing import List
 
 class Settings:
