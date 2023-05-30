@@ -1,5 +1,5 @@
-from ..singletons.prolog_mqi import PrologServer
-from ..models.settings import Settings
+from singletons.prolog_mqi import PrologServer
+from models.settings import Settings
 from typing import List, Tuple
 
 class Game:
@@ -68,13 +68,13 @@ class Game:
         return current_guess
     
     def get_last_feedback(self) -> list:
-        current_guess: list = []
+        feedback: list = []
         try:
-           current_guess = self.prolog.assign('feedback') # type: ignore
+           feedback = self.prolog.assign('feedback') # type: ignore
         except:
-            return current_guess
+            return feedback
     
-        return current_guess
+        return feedback
 
     def status(self) -> Tuple[int, str]:
         response = self.result_codes['continue']

@@ -1,0 +1,24 @@
+# Dockerfile do backend
+FROM python:3.9
+
+WORKDIR /app
+
+# Instala o SWI-Prolog e as dependências do Flask
+RUN apt-get update && apt-get install -y --no-install-recommends software-properties-common swi-prolog && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copia os arquivos de código fonte  para o diretório de trabalho
+COPY src/ .
+
+# Instala as dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Baixa o arquivo mqi.pl do repositório packages-mqi
+RUN wget https://github.com/SWI-Prolog/packages-mqi/raw/master/mqi.pl && \
+    swipl -s mqi.pl -g "mqi:install_to_library('mqi.pl')" -t halt && \
+    rm mqi.pl
+
+EXPOSE 5000
+
+CMD ["python", "app/app.py"]

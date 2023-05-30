@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from app.models.game import Game
+from models.game import Game
 
 
 app = Flask(__name__)
@@ -55,5 +55,5 @@ def game_status():
     return jsonify(response), 200
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
  
