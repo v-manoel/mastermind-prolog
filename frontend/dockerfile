@@ -4,7 +4,6 @@ FROM nginx:latest
 COPY index.html /usr/share/nginx/html
 COPY style /usr/share/nginx/html/style
 COPY scripts /usr/share/nginx/html/scripts
-COPY view /usr/share/nginx/html/view
 
 EXPOSE 80
 
